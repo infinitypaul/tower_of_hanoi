@@ -19,6 +19,9 @@ class TowerOfHanoiService
     }
 
 
+    /**
+     * @return void
+     */
     public function initializeGame(): void
     {
         $this->rods = [
@@ -29,6 +32,9 @@ class TowerOfHanoiService
         $this->isGameFinished = false;
     }
 
+    /**
+     * @return array
+     */
     public function fetchGameState(): array
     {
         return [
@@ -37,6 +43,11 @@ class TowerOfHanoiService
         ];
     }
 
+    /**
+     * @param int $startRod
+     * @param int $targetRod
+     * @return string
+     */
     public function move(int $startRod, int $targetRod): string
     {
         if ($this->isGameFinished) {
@@ -63,6 +74,11 @@ class TowerOfHanoiService
         return self::MOVE_SUCCESSFUL;
     }
 
+    /**
+     * @param int $start
+     * @param int $end
+     * @return bool
+     */
     private function validateMove(int $start, int $end): bool
     {
         if (empty($this->rods[$start])) {

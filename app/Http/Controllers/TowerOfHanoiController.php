@@ -50,6 +50,9 @@ class TowerOfHanoiController extends Controller
 
         if(count($this->pegs[2]) === $this->totalDisks) {
             $this->gameOver = true;
+            return response()->json([
+                'message' => 'Game Over'
+            ], 200);
         }
 
         return  $this->getState();

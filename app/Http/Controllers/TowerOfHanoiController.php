@@ -14,7 +14,7 @@ class TowerOfHanoiController extends Controller
     public function __construct()
     {
         $this->pegs = [
-            [$this->totalDisks, 1],
+            range($this->totalDisks, 1),
             [],
             []
         ];

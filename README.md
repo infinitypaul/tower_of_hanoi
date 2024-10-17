@@ -13,7 +13,7 @@
 1. Clone the project.
 
 ```
-git clone https://github.com/infinitypaul/hanoi.git projectname
+git clone https://github.com/infinitypaul/tower_of_hanoi.git projectname
 ```
 
 2. Install dependencies via composer.
@@ -47,7 +47,7 @@ Description: Retrieves the current state of the Tower of Hanoi game, including t
 
 
 ```
-GET http://localhost:8000/api/move/{from}/{to}
+POST http://localhost:8000/api/move/{from}/{to}
 ```
 Description: Moves a disk from one rod (from) to another rod (to).
 

@@ -26,4 +26,16 @@ class TowerOfHanoiTest extends TestCase
             'gameOver' => false
         ]);
     }
+
+    public function testInvalidMove()
+    {
+        $this->postJson('/api/move/1/2');
+
+        $response = $this->postJson('/api/move/1/2');
+
+        $response->assertStatus(400);
+        $response->assertJson([
+            'message' => 'Invalid Move'
+        ]);
+    }
 }

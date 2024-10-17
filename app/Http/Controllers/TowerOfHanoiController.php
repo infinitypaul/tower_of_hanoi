@@ -33,7 +33,7 @@ class TowerOfHanoiController extends Controller
         if($this->gameOver) {
             return response()->json([
                 'message' => 'Game Over'
-            ]);
+            ], 400);
         }
 
         $source = $from - 1;
@@ -42,7 +42,7 @@ class TowerOfHanoiController extends Controller
         if(!$this->isValidMove($source, $destination)) {
             return response()->json([
                 'message' => 'Invalid Move'
-            ]);
+            ], 400);
         }
 
         $disk = array_pop($this->pegs[$source]);
